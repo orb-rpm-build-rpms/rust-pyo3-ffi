@@ -1,0 +1,26 @@
+From e07ffa586cf905f2c49eff3aea1b7fada38d5437 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Tom=C3=A1=C5=A1=20Hrn=C4=8Diar?= <thrnciar@redhat.com>
+Date: Tue, 25 Jul 2023 08:56:05 +0200
+Subject: [PATCH] Add PyType_GetDict for Python 3.12
+
+---
+ src/cpython/object.rs | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/src/cpython/object.rs b/src/cpython/object.rs
+index 76ab074..8209524 100644
+--- a/src/cpython/object.rs
++++ b/src/cpython/object.rs
+@@ -349,6 +349,9 @@ pub unsafe fn PyHeapType_GET_MEMBERS(
+ // skipped _PyType_GetModuleByDef
+ 
+ extern "C" {
++    #[cfg(Py_3_12)]
++    pub fn PyType_GetDict(o: *mut PyTypeObject) -> *mut PyObject;
++
+     #[cfg_attr(PyPy, link_name = "PyPyObject_Print")]
+     pub fn PyObject_Print(o: *mut PyObject, fp: *mut ::libc::FILE, flags: c_int) -> c_int;
+ 
+-- 
+2.40.1
+
