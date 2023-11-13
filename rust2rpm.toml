@@ -1,0 +1,4 @@
+[requires]
+build = ["python3-devel >= 3.7"]
+lib = ["python3-devel >= 3.7"]
+
