@@ -1,7 +1,10 @@
---- pyo3-ffi-0.20.0/Cargo.toml	1970-01-01T00:00:01+00:00
-+++ pyo3-ffi-0.20.0/Cargo.toml	2023-11-13T23:45:21.194275+00:00
-@@ -62,4 +62,3 @@
+--- pyo3-ffi-0.20.1/Cargo.toml	1970-01-01T00:00:01+00:00
++++ pyo3-ffi-0.20.1/Cargo.toml	2023-12-31T22:04:01.184859+00:00
+@@ -66,7 +66,6 @@
  ]
  default = []
  extension-module = ["pyo3-build-config/extension-module"]
 -generate-import-lib = ["pyo3-build-config/python3-dll-a"]
+ 
+ [lints.clippy]
+ checked_conversions = "warn"
