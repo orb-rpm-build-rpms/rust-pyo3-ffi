@@ -16,6 +16,13 @@ Source:         %{crates_source}
 # * drop MSVC- and MinGW-only features
 Patch:          pyo3-ffi-fix-metadata.diff
 
+# Downstream-only patch: always allow unsupported versions of Python.
+# We constantly attempt to integrate alpha and beta releases of Python
+# and need to rebuild all dependent packages in Copr, also those that
+# use pyo3-ffi without patching each and every one of them,
+# hence we explicitly allow to skip version check when building RPMs.
+Patch:          Allow-unsupported-Python-versions-in-RPM-builds.patch
+
 BuildRequires:  cargo-rpm-macros >= 24
 BuildRequires:  python3-devel >= 3.7
 
