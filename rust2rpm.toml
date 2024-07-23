@@ -1,7 +1,6 @@
-[package]
-cargo-toml-patch-comments = [
-    "drop MSVC- and MinGW-only features",
-]
+[features]
+# drop MSVC- and MinGW-only features
+hide = ["generate-import-lib"]
 
 [requires]
 build = ["python3-devel >= 3.7"]

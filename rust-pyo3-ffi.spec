@@ -5,16 +5,13 @@
 %global crate pyo3-ffi
 
 Name:           rust-pyo3-ffi
-Version:        0.22.0
+Version:        0.22.2
 Release:        %autorelease
 Summary:        Python-API bindings for the PyO3 ecosystem
 
 License:        MIT OR Apache-2.0
 URL:            https://crates.io/crates/pyo3-ffi
 Source:         %{crates_source}
-# Manually created patch for downstream crate metadata changes
-# * drop MSVC- and MinGW-only features
-Patch:          pyo3-ffi-fix-metadata.diff
 
 # Downstream-only patch: always allow unsupported versions of Python.
 # We constantly attempt to integrate alpha and beta releases of Python
