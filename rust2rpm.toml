@@ -9,6 +9,11 @@ use pyo3-ffi without patching each and every one of them, hence we
 explicitly allow to skip version check when building RPMs.""",
 ]
 
+[[package.extra-patches]]
+number = 3
+file = "0001-Make-PyObjectObRefcnt.refcnt_and_flags-64-bit-only.patch"
+comments = ["https://github.com/PyO3/pyo3/issues/5175#issuecomment-2939918138"]
+
 [features]
 # drop MSVC- and MinGW-only features
 hide = ["generate-import-lib"]
